@@ -1,3 +1,5 @@
+![Генератор листа персонажа D&D для Long Story Short - скилл для ИИ-агентов](.github/assets/banner.png)
+
 # Генератор листа персонажа D&D для Long Story Short (LSS)
 
 Скилл для ИИ-агентов, который создаёт персонажа D&D 5e (ДнД 5e) и сразу собирает его лист для
@@ -19,19 +21,66 @@ Claude.ai, Codex и другие агенты, которые понимают �
 
 ## Установка
 
-Скачай архив из последнего [релиза](../../releases/latest): `lss-character.skill` или
-`lss-character.zip` (это один и тот же zip, внутри папка `lss-character/`).
+### Попроси своего агента
+
+Если у агента есть терминал и интернет (Claude Code, Codex и подобные), просто дай ему ссылку
+на репозиторий:
+
+> Установи себе скилл из https://github.com/Dezodemius/dnd-lss-character-generator - инструкция
+> в README, раздел «Установка агентом».
+
+Агент скачает архив из последнего релиза, распакует его в свою папку скиллов и проверит, что
+всё работает. После этого начни новую сессию (или перезапусти агента), чтобы он увидел скилл.
+Так же обновляется скилл до новой версии.
+
+### Скачай архив
+
+Архив со скиллом лежит в каждом [релизе](https://github.com/Dezodemius/dnd-lss-character-generator/releases)
+в двух одинаковых вариантах: внутри zip с папкой `lss-character/`.
+
+- [lss-character.zip](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip) - для Claude Code, Codex и других агентов
+- [lss-character.skill](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.skill) - для загрузки в Claude.ai
 
 | Где | Как установить |
 |---|---|
 | Claude Code | распаковать в `~/.claude/skills/` (Windows: `%USERPROFILE%\.claude\skills\`) |
 | Codex | распаковать в `~/.codex/skills/` (Windows: `%USERPROFILE%\.codex\skills\`) |
-| Claude.ai | Settings -> Capabilities -> Skills -> Upload skill, выбрать `lss-character.skill`; нужно включённое выполнение кода |
+| Claude.ai | Settings -> Capabilities -> Skills -> Upload skill, выбрать `lss-character.skill`; нужно включённое выполнение кода. Сам агент в Claude.ai скилл себе поставить не может |
 | Другой агент с поддержкой Agent Skills | распаковать в его папку скиллов |
 | Любой агент с файлами и Python | дать ему архив и написать: «Распакуй, прочитай `lss-character/SKILL.md` и действуй по нему» |
 
+То же из терминала (пример для Claude Code; для Codex замени `.claude` на `.codex`):
+
+```bash
+curl -L -o /tmp/lss-character.zip https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip
+unzip -o /tmp/lss-character.zip -d ~/.claude/skills/
+```
+
+```powershell
+Invoke-WebRequest https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip -OutFile "$env:TEMP\lss-character.zip"
+Expand-Archive "$env:TEMP\lss-character.zip" -DestinationPath "$env:USERPROFILE\.claude\skills" -Force
+```
+
 После распаковки должна получиться папка `lss-character/` с файлом `SKILL.md` внутри.
 Нужен Python 3.8+; желательно `pip install jsonschema pillow` (проверка схемой и портрет).
+
+### Установка агентом
+
+Инструкция для ИИ-агента, которого попросили установить этот скилл:
+
+1. Определи свою папку скиллов: Claude Code - `~/.claude/skills/`, Codex - `~/.codex/skills/`,
+   другой агент - та папка, откуда он читает скиллы в формате Agent Skills. Не знаешь, где она, -
+   спроси пользователя.
+2. Скачай https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip
+   и распакуй в эту папку. Должен появиться файл `<папка скиллов>/lss-character/SKILL.md`.
+   Если папка `lss-character` уже была, замени её целиком: это обновление.
+   Если релиза нет или скачать не вышло, склонируй репозиторий и скопируй из него папку
+   `lss-character/`.
+3. Выполни `pip install jsonschema pillow`. Если не получается (нет сети или прав), это не
+   страшно: скилл работает и без них, просто с предупреждениями.
+4. Проверь: `python <папка скиллов>/lss-character/scripts/lss.py spells --edition 2014 --search fire`
+   должен вывести список заклинаний.
+5. Скажи пользователю, что скилл установлен, и попроси начать новую сессию, чтобы скилл подхватился.
 
 ## Как пользоваться
 
@@ -120,12 +169,13 @@ New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\lss-character
 
 ### Релиз
 
-Тег вида `v*` запускает `.github/workflows/release.yml`: смоук-тесты, сборка архива и релиз
-на GitHub с `lss-character.skill`, `lss-character.zip` и их sha256.
+Тег из четырёх чисел (`0.1.0.0`) запускает `.github/workflows/release.yml`: смоук-тесты,
+сборка архива и релиз на GitHub с `lss-character.skill`, `lss-character.zip` и их sha256.
+Теги другого вида релиз не запускают.
 
 ```bash
-git tag v1.0.0
-git push origin v1.0.0
+git tag 0.1.0.0
+git push origin 0.1.0.0
 ```
 
 ## English
@@ -137,9 +187,13 @@ file ready to import into [Long Story Short](https://longstoryshort.app): abilit
 HP, AC, weapons, magic items with bonuses, resource counters, SRD spells and the portrait.
 Supports D&D 2014 and 2024 rules; every sheet is validated against the official LSS JSON Schema.
 
-Install: download `lss-character.zip` from the [latest release](../../releases/latest) and unpack
-it into your agent's skills folder (`~/.claude/skills/`, `~/.codex/skills/`, ...), or upload
-`lss-character.skill` in Claude.ai. Requires Python 3.8+, ideally with `jsonschema` and `pillow`.
+Install: ask your agent "Install the skill from
+https://github.com/Dezodemius/dnd-lss-character-generator, see the README section «Установка
+агентом»", or download
+[lss-character.zip](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip)
+and unpack it into your agent's skills folder (`~/.claude/skills/`, `~/.codex/skills/`, ...), or
+upload [lss-character.skill](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.skill)
+in Claude.ai. Requires Python 3.8+, ideally with `jsonschema` and `pillow`.
 The skill's instructions are in Russian, but agents follow them in any language.
 
 ## Источники
