@@ -1,0 +1,38 @@
+{
+  "edition": "2014",
+  "spells": {
+    "prepared": ["Мистический заряд", "Фокусы", "Hex", "Адское возмездие", "Misty Step", "Hold Person", "Counterspell", "Fireball", "Booming Blade"]
+  },
+  "data": {
+    "name": "Мордекай Пепел",
+    "info": {
+      "charClass": "Колдун",
+      "charSubclass": "Исчадие",
+      "level": 5,
+      "background": "Шарлатан",
+      "race": "Тифлинг",
+      "alignment": "Хаотично-нейтральный",
+      "experience": "6 500"
+    },
+    "stats": { "Сила": 8, "dex": 14, "con": 14, "int": 12, "wis": 10, "cha": 18 },
+    "skills": ["deception", "Ловкость рук", "arcana", "intimidation"],
+    "vitality": { "hp-max": 38, "ac": "11+[DEX]", "darkvision": 60 },
+    "prof": ["light", "simple"],
+    "weaponsList": [
+      { "id": "weapon-dagger", "name": "Кинжал", "dmg": "1к4+[DEX]", "dmgType": "колющий", "ability": "dex" }
+    ],
+    "attunementsList": [ { "id": "attunement-rod", "value": "Жезл договорника +1" } ],
+    "bonuses": [
+      { "label": "Жезл договорника +1", "target": "spellAttack", "value": 1, "source": { "kind": "attunement", "refId": "attunement-rod", "label": "Жезл договорника +1" } },
+      { "label": "Жезл договорника +1", "target": "spellDC", "value": 1, "source": { "kind": "attunement", "refId": "attunement-rod", "label": "Жезл договорника +1" } },
+      { "label": "Кинжал +1", "target": "weapon.weapon-dagger.attack", "value": 1, "source": "Кинжал +1" }
+    ],
+    "resources": [
+      { "id": "resource-dark-one", "name": "Удача тёмного (1к10)", "max": 1, "isShortRest": true, "isLongRest": true }
+    ],
+    "text": {
+      "traits": "## Воззвания\n- Мучительный взрыв\n- Маска многих лиц\n\n**Удача тёмного.** +1к10 к проверке или спасброску.\n[[resource:resource-dark-one]]",
+      "equipment": "Лёгкий арбалет, кинжал x2, кожаный доспех, фокусировка, набор учёного."
+    }
+  }
+}

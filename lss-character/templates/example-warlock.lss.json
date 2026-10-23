@@ -1,0 +1,32 @@
+{
+  "jsonType": "character",
+  "version": "2",
+  "edition": "2014",
+  "sheetEdition": "2014",
+  "spells": {
+    "mode": "cards",
+    "prepared": [
+      "65d3c175f3d820fa1add4997",
+      "65d3c174f3d820fa1add4958",
+      "hex",
+      "65d3c16cf3d820fa1add44c7",
+      "65d3c16bf3d820fa1add4434",
+      "65d3c16cf3d820fa1add44f1",
+      "65d3c168f3d820fa1add41fd",
+      "65d3c16df3d820fa1add458b",
+      "booming-blade"
+    ],
+    "book": [],
+    "granted": [],
+    "slotless": []
+  },
+  "disabledBlocks": {
+    "info-left": [],
+    "info-right": [],
+    "subinfo-left": [],
+    "subinfo-right": [],
+    "notes-left": [],
+    "notes-right": []
+  },
+  "data": "{\"name\":{\"value\":\"Мордекай Пепел\"},\"info\":{\"charClass\":{\"name\":\"charClass\",\"value\":\"Колдун\",\"id\":\"warlock\"},\"charSubclass\":{\"name\":\"charSubclass\",\"value\":\"Исчадие\"},\"level\":{\"name\":\"level\",\"value\":5},\"background\":{\"name\":\"background\",\"value\":\"Шарлатан\"},\"race\":{\"name\":\"race\",\"value\":\"Тифлинг\"},\"alignment\":{\"name\":\"alignment\",\"value\":\"Хаотично-нейтральный\"},\"experience\":{\"name\":\"experience\",\"value\":6500},\"playerName\":{\"name\":\"playerName\",\"value\":\"\"},\"size\":{\"value\":\"medium\"}},\"stats\":{\"str\":{\"name\":\"str\",\"score\":8},\"dex\":{\"name\":\"dex\",\"score\":14},\"con\":{\"name\":\"con\",\"score\":14},\"int\":{\"name\":\"int\",\"score\":12},\"wis\":{\"name\":\"wis\",\"score\":10},\"cha\":{\"name\":\"cha\",\"score\":18}},\"skills\":{\"athletics\":{\"name\":\"athletics\",\"baseStat\":\"str\"},\"acrobatics\":{\"name\":\"acrobatics\",\"baseStat\":\"dex\"},\"sleight of hand\":{\"isProf\":1,\"name\":\"sleight of hand\",\"baseStat\":\"dex\"},\"stealth\":{\"name\":\"stealth\",\"baseStat\":\"dex\"},\"arcana\":{\"isProf\":1,\"name\":\"arcana\",\"baseStat\":\"int\"},\"history\":{\"name\":\"history\",\"baseStat\":\"int\"},\"investigation\":{\"name\":\"investigation\",\"baseStat\":\"int\"},\"nature\":{\"name\":\"nature\",\"baseStat\":\"int\"},\"religion\":{\"name\":\"religion\",\"baseStat\":\"int\"},\"animal handling\":{\"name\":\"animal handling\",\"baseStat\":\"wis\"},\"insight\":{\"name\":\"insight\",\"baseStat\":\"wis\"},\"medicine\":{\"name\":\"medicine\",\"baseStat\":\"wis\"},\"perception\":{\"name\":\"perception\",\"baseStat\":\"wis\"},\"survival\":{\"name\":\"survival\",\"baseStat\":\"wis\"},\"deception\":{\"isProf\":1,\"name\":\"deception\",\"baseStat\":\"cha\"},\"intimidation\":{\"isProf\":1,\"name\":\"intimidation\",\"baseStat\":\"cha\"},\"performance\":{\"name\":\"performance\",\"baseStat\":\"cha\"},\"persuasion\":{\"name\":\"persuasion\",\"baseStat\":\"cha\"}},\"vitality\":{\"hp-max\":{\"value\":38},\"ac\":{\"value\":\"11+[DEX]\"},\"darkvision\":{\"value\":60},\"hp-max-bonus\":{\"value\":0},\"hp-temp\":{\"value\":0},\"hp-current\":{\"value\":38},\"hit-die\":{\"value\":\"d8\"},\"hp-dice-current\":{\"value\":5},\"hp-dice-multi\":{},\"speed\":{\"value\":\"30\"},\"shield\":{\"value\":false,\"mod\":\"2\"},\"initiative\":{\"value\":null},\"isDying\":false,\"deathFails\":0,\"deathSuccesses\":0},\"prof\":{\"armor-light\":{\"value\":true},\"weapon-simple\":{\"value\":true}},\"weaponsList\":[{\"id\":\"weapon-dagger\",\"name\":{\"value\":\"Кинжал\"},\"dmg\":{\"value\":\"1к4+[DEX]\"},\"dmgType\":{\"value\":\"колющий\"},\"ability\":\"dex\",\"isProf\":true}],\"attunementsList\":[{\"id\":\"attunement-rod\",\"value\":\"Жезл договорника +1\",\"checked\":true}],\"bonuses\":[{\"label\":\"Жезл договорника +1\",\"target\":\"spellAttack\",\"value\":1,\"source\":{\"kind\":\"attunement\",\"refId\":\"attunement-rod\",\"label\":\"Жезл договорника +1\"},\"id\":\"bonus-1792733196215\",\"mode\":\"add\"},{\"label\":\"Жезл договорника +1\",\"target\":\"spellDC\",\"value\":1,\"source\":{\"kind\":\"attunement\",\"refId\":\"attunement-rod\",\"label\":\"Жезл договорника +1\"},\"id\":\"bonus-1792733196216\",\"mode\":\"add\"},{\"label\":\"Кинжал +1\",\"target\":\"weapon.weapon-dagger.attack\",\"value\":1,\"source\":{\"kind\":\"item\",\"label\":\"Кинжал +1\"},\"id\":\"bonus-1792733196217\",\"mode\":\"add\"}],\"resources\":{\"resource-dark-one\":{\"id\":\"resource-dark-one\",\"name\":\"Удача тёмного (1к10)\",\"max\":1,\"isShortRest\":true,\"isLongRest\":true,\"current\":1,\"location\":\"traits\"}},\"text\":{\"traits\":{\"value\":{\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Воззвания\",\"marks\":[{\"type\":\"bold\"}]}]},{\"type\":\"bulletList\",\"content\":[{\"type\":\"listItem\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Мучительный взрыв\"}]}]},{\"type\":\"listItem\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Маска многих лиц\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Удача тёмного.\",\"marks\":[{\"type\":\"bold\"}]},{\"type\":\"text\",\"text\":\" +1к10 к проверке или спасброску.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"resource\",\"attrs\":{\"id\":\"resource-dark-one\",\"textName\":\"traits\"}}]}]}}},\"equipment\":{\"value\":{\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Лёгкий арбалет, кинжал x2, кожаный доспех, фокусировка, набор учёного.\"}]}]}}}},\"jsonType\":\"character\",\"template\":\"default\",\"proficiency\":3,\"saves\":{\"str\":{\"name\":\"str\",\"isProf\":false},\"dex\":{\"name\":\"dex\",\"isProf\":false},\"con\":{\"name\":\"con\",\"isProf\":false},\"int\":{\"name\":\"int\",\"isProf\":false},\"wis\":{\"name\":\"wis\",\"isProf\":true},\"cha\":{\"name\":\"cha\",\"isProf\":true}},\"spellsInfo\":{\"base\":{\"name\":\"base\",\"value\":\"\",\"code\":\"cha\"},\"save\":{\"name\":\"save\",\"value\":\"\"},\"mod\":{\"name\":\"mod\",\"value\":\"\"}},\"spells\":{},\"spellsPact\":{\"slots-3\":{\"value\":2,\"filled\":0}},\"coins\":{\"gp\":{\"value\":0},\"sp\":{\"value\":0},\"cp\":{\"value\":0},\"pp\":{\"value\":0},\"ep\":{\"value\":0}},\"conditions\":[],\"exhaustion\":0,\"inspiration\":false,\"avatar\":null}"
+}

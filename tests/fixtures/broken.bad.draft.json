@@ -1,0 +1,14 @@
+{
+  "edition": "2024",
+  "spells": { "prepared": ["Несуществующий луч смерти", "cure wounds"] },
+  "data": {
+    "name": "Сломанный",
+    "info": { "charClass": "Жрец", "level": 2 },
+    "stats": { "str": 10, "dex": 10, "con": 10, "int": 10, "wis": 40, "cha": 10 },
+    "skills": ["Медицина", "лазанье"],
+    "vitality": { "hp-max": 15, "ac": "10+[dex]", "speed": "30+сила" },
+    "bonuses": [ { "label": "x", "target": "weapon.nope.damage", "value": 1 }, { "label": "y", "target": "ac", "value": 1, "expr": "1" } ],
+    "resources": [ { "id": "r1", "name": "Канал", "max": 2, "location": "features" } ],
+    "text": { "traits": { "type": "doc", "content": [ { "type": "blockquote", "content": [] } ] } }
+  }
+}

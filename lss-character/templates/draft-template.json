@@ -1,0 +1,64 @@
+{
+  "edition": "2014",
+  "sheetEdition": "2014",
+  "spells": {
+    "prepared": ["Огненный снаряд", "Mage Hand", "Light", "shield", "Волшебная стрела [Magic Missile]", "Burning Hands", "Misty Step"],
+    "book": ["shield", "Волшебная стрела [Magic Missile]", "Burning Hands", "Detect Magic", "Sleep", "Feather Fall", "Misty Step", "Scorching Ray"]
+  },
+  "data": {
+    "name": "Имя персонажа",
+    "template": "default",
+    "info": {
+      "charClass": "Волшебник",
+      "charSubclass": "Школа Воплощения",
+      "level": 3,
+      "background": "Мудрец",
+      "playerName": "",
+      "race": "Высший эльф",
+      "alignment": "Нейтрально-добрый",
+      "experience": 900,
+      "size": "medium"
+    },
+    "subInfo": {
+      "age": "120",
+      "height": "175 см",
+      "weight": "60 кг",
+      "eyes": "серые",
+      "skin": "бледная",
+      "hair": "серебристые"
+    },
+    "stats": { "str": 8, "dex": 14, "con": 14, "int": 17, "wis": 12, "cha": 10 },
+    "saves": ["int", "wis"],
+    "skills": { "arcana": 1, "history": 1, "perception": 1, "investigation": 1 },
+    "vitality": {
+      "hp-max": 17,
+      "ac": "10+[DEX]",
+      "speed": "30",
+      "darkvision": 60
+    },
+    "prof": ["weapon-other"],
+    "weaponsList": [
+      { "name": "Боевой посох", "dmg": "1к6+[STR]", "dmgType": "дробящий", "ability": "str", "isProf": true, "notes": "универсальное (1к8)" }
+    ],
+    "attunementsList": [],
+    "bonuses": [],
+    "resources": [
+      { "id": "resource-arcane-recovery", "name": "Магическое восстановление", "max": 1, "isLongRest": true, "location": "traits" }
+    ],
+    "coins": { "gp": 10 },
+    "text": {
+      "traits": [
+        "**Магическое восстановление.** Раз в день на коротком отдыхе восстанавливает ячейки суммарного круга до половины уровня.",
+        "[[resource:resource-arcane-recovery]]",
+        "**Наследие фей.** Преимущество против очарования, магия не усыпляет."
+      ],
+      "equipment": "- Боевой посох\n- Книга заклинаний\n- Мешочек с компонентами\n- Набор учёного",
+      "prof": "Языки: общий, эльфийский, драконий, дварфийский.\nОружие: кинжалы, дротики, пращи, боевые посохи, лёгкие арбалеты, длинные мечи, луки.",
+      "personality": "Тихий, вечно с книгой.",
+      "ideals": "Знание - путь к силе.",
+      "bonds": "Ищет утраченный трактат наставника.",
+      "flaws": "Не умеет вовремя замолчать, если речь о магии.",
+      "background": "Предыстория персонажа абзацами."
+    }
+  }
+}

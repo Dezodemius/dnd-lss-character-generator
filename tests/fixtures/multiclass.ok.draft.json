@@ -1,0 +1,5 @@
+{ "edition": "2014", "spells": { "prepared": ["Eldritch Blast", "Bless", "Hex"] },
+  "data": { "name": "Сэр Грей", "info": { "charClass": "Паладин 6 / Колдун 2", "level": 8 },
+    "stats": { "str": 16, "dex": 10, "con": 14, "int": 8, "wis": 10, "cha": 18 },
+    "vitality": { "hp-max": 68, "ac": "18", "shield": true, "hp-dice-multi": { "d10": { "max": 6, "current": 6 }, "d8": { "max": 2, "current": 2 } } },
+    "spells": { "1": 4, "2": 2 }, "spellsPact": { "1": 2 } } }
