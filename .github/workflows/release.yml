@@ -1,0 +1,33 @@
+name: Release
+
+# Тег вида v1.2.0 -> проверки -> релиз с архивом скилла.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install jsonschema pillow
+      - run: python tools/check.py
+      - name: Package
+        run: |
+          python tools/package.py dist
+          cd dist && sha256sum lss-character.skill > lss-character.skill.sha256
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" dist/lss-character.skill dist/lss-character.skill.sha256 \
+            --title "lss-character $TAG" \
+            --generate-notes \
+            --notes-file .github/release-notes.md
