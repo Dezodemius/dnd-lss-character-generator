@@ -1,4 +1,4 @@
-"""Собирает скилл в архив .skill (обычный zip с папкой скилла внутри).
+"""Собирает скилл в архивы .skill и .zip (одинаковый zip с папкой скилла внутри).
 
 Использование: python tools/package.py [папка-вывода]   (по умолчанию dist/)
 """
@@ -54,8 +54,11 @@ def main():
             if p.suffix in TEXT_SUFFIXES:
                 body = body.replace(b"\r\n", b"\n")
             zf.writestr(info, body)
+    # .skill понимает Claude.ai, остальным агентам привычнее .zip - внутри одно и то же.
+    zip_copy = target.with_suffix(".zip")
+    zip_copy.write_bytes(target.read_bytes())
     digest = hashlib.sha256(target.read_bytes()).hexdigest()
-    print(f"{target} ({len(files)} файлов, {target.stat().st_size // 1024} КБ)")
+    print(f"{target} и {zip_copy.name} ({len(files)} файлов, {target.stat().st_size // 1024} КБ)")
     print(f"sha256: {digest}")
 
 
