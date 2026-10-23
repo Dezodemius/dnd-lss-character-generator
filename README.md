@@ -21,47 +21,17 @@ Claude.ai, Codex и другие агенты, которые понимают �
 
 ## Установка
 
-### Попроси своего агента
+Готовые файлы лежат в [релизах](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest).
 
-Если у агента есть терминал и интернет (Claude Code, Codex и подобные), просто дай ему ссылку
-на репозиторий:
+| Где пользуетесь | Как подключить |
+| --- | --- |
+| **claude.ai**, Claude Desktop | Скачать [`lss-character.zip`](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip) → Настройки → Возможности → Skills → загрузить. В Desktop можно открыть [`lss-character.skill`](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.skill) двойным кликом |
+| **Claude Code** | `/plugin marketplace add Dezodemius/agent-skills`, затем `/plugin install lss-character@dezodemius-skills` |
+| **Codex, Gemini CLI, Cursor, GitHub Copilot, OpenCode** и другие агенты | `npx skills add Dezodemius/dnd-lss-character-generator` |
+| **ChatGPT, Gemini, DeepSeek, Qwen, Grok, Алиса, GigaChat** и другие чаты | Скачать [`lss-character.prompt.md`](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.prompt.md) и приложить в начале чата или вставить в инструкции проекта / GPT / Gem |
 
-> Установи себе скилл из https://github.com/Dezodemius/dnd-lss-character-generator - инструкция
-> в README, раздел «Установка агентом».
+Подробно по каждой платформе — в [каталоге](https://github.com/Dezodemius/agent-skills#установка).
 
-Агент скачает архив из последнего релиза, распакует его в свою папку скиллов и проверит, что
-всё работает. После этого начни новую сессию (или перезапусти агента), чтобы он увидел скилл.
-Так же обновляется скилл до новой версии.
-
-### Скачай архив
-
-Архив со скиллом лежит в каждом [релизе](https://github.com/Dezodemius/dnd-lss-character-generator/releases)
-в двух одинаковых вариантах: внутри zip с папкой `lss-character/`.
-
-- [lss-character.zip](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip) - для Claude Code, Codex и других агентов
-- [lss-character.skill](https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.skill) - для загрузки в Claude.ai
-
-| Где | Как установить |
-|---|---|
-| Claude Code | распаковать в `~/.claude/skills/` (Windows: `%USERPROFILE%\.claude\skills\`) |
-| Codex | распаковать в `~/.codex/skills/` (Windows: `%USERPROFILE%\.codex\skills\`) |
-| Claude.ai | Settings -> Capabilities -> Skills -> Upload skill, выбрать `lss-character.skill`; нужно включённое выполнение кода. Сам агент в Claude.ai скилл себе поставить не может |
-| Другой агент с поддержкой Agent Skills | распаковать в его папку скиллов |
-| Любой агент с файлами и Python | дать ему архив и написать: «Распакуй, прочитай `lss-character/SKILL.md` и действуй по нему» |
-
-То же из терминала (пример для Claude Code; для Codex замени `.claude` на `.codex`):
-
-```bash
-curl -L -o /tmp/lss-character.zip https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip
-unzip -o /tmp/lss-character.zip -d ~/.claude/skills/
-```
-
-```powershell
-Invoke-WebRequest https://github.com/Dezodemius/dnd-lss-character-generator/releases/latest/download/lss-character.zip -OutFile "$env:TEMP\lss-character.zip"
-Expand-Archive "$env:TEMP\lss-character.zip" -DestinationPath "$env:USERPROFILE\.claude\skills" -Force
-```
-
-После распаковки должна получиться папка `lss-character/` с файлом `SKILL.md` внутри.
 Нужен Python 3.8+; желательно `pip install jsonschema pillow` (проверка схемой и портрет).
 
 ### Установка агентом
@@ -142,41 +112,38 @@ LSS обычно хранит аватар у себя на сервере, а �
 ## Разработка
 
 ```
-lss-character/          сам скилл - то, что попадает в архив
+skills/lss-character/   сам скилл - то, что попадает в архив
   SKILL.md              инструкция для агента
   scripts/lss.py        сборка черновика в лист и проверка
   reference/            схема LSS, справочники заклинаний SRD, формат черновика
   templates/            пример черновика и готовые листы
 tests/fixtures/         черновики для смоук-тестов (*.ok - должны собраться, *.bad - отклониться)
 tools/check.py          смоук-тесты
-tools/package.py        сборка dist/lss-character.skill и dist/lss-character.zip
 ```
 
 ```bash
-pip install jsonschema pillow
+pip install -r requirements-dev.txt
 python tools/check.py
-python tools/package.py
 ```
 
 Чтобы агент на своей машине пользовался скиллом прямо из репозитория, свяжи папку ссылкой,
 а не копией (Windows, для Codex - `.codex` вместо `.claude`):
 
 ```powershell
-New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\lss-character" -Target "<путь к репозиторию>\lss-character"
+New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\lss-character" -Target "<путь к репозиторию>\skills\lss-character"
 ```
 
-Схему и справочники LSS обновляет `python lss-character/scripts/lss.py refresh`.
+Схему и справочники LSS обновляет `python skills/lss-character/scripts/lss.py refresh`.
 
-### Релиз
+### Выпуск релиза
 
-Тег из четырёх чисел (`0.1.0.0`) запускает `.github/workflows/release.yml`: смоук-тесты,
-сборка архива и релиз на GitHub с `lss-character.skill`, `lss-character.zip` и их sha256.
-Теги другого вида релиз не запускают.
+Релиз собирается автоматически по тегу из четырёх чисел на коммите из `main`:
 
 ```bash
-git tag 0.1.0.0
-git push origin 0.1.0.0
+git tag 1.0.0.0 && git push origin 1.0.0.0
 ```
+
+Общий CD и проверки живут в [Dezodemius/agent-skills](https://github.com/Dezodemius/agent-skills).
 
 ## English
 

@@ -1,0 +1,14 @@
+{
+  "name": "lss-character",
+  "owner": {
+    "name": "Egor Gladkov (Dezodemius)",
+    "url": "https://github.com/Dezodemius"
+  },
+  "plugins": [
+    {
+      "name": "lss-character",
+      "source": "./",
+      "description": "Создаёт по описанию персонажа D&D 5e готовый к импорту файл листа Long Story Short (LSS, longstoryshort.app) в формате .json - с характеристиками, навыками, хитами, оружием, магическими предметами и бонусами, ресурсами, текстами, заклинаниями и портретом, проверенный официальной JSON Schema LSS."
+    }
+  ]
+}

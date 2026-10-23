@@ -1,5 +1,8 @@
-* text=auto eol=crlf
-*.jpg binary
+* text=auto eol=lf
 *.png binary
-*.webp binary
+*.jpg binary
+*.pptx binary
+*.pdf binary
+*.ttf binary
+*.zip binary
 *.skill binary

@@ -1,0 +1,18 @@
+{
+  "name": "lss-character",
+  "description": "Создаёт по описанию персонажа D&D 5e готовый к импорту файл листа Long Story Short (LSS, longstoryshort.app) в формате .json - с характеристиками, навыками, хитами, оружием, магическими предметами и бонусами, ресурсами, текстами, заклинаниями и портретом, проверенный официальной JSON Schema LSS.",
+  "author": {
+    "name": "Egor Gladkov (Dezodemius)",
+    "url": "https://github.com/Dezodemius"
+  },
+  "homepage": "https://github.com/Dezodemius/dnd-lss-character-generator",
+  "repository": "https://github.com/Dezodemius/dnd-lss-character-generator",
+  "license": "Apache-2.0",
+  "keywords": [
+    "dnd",
+    "dnd5e",
+    "ttrpg",
+    "agent-skill",
+    "long-story-short"
+  ]
+}
