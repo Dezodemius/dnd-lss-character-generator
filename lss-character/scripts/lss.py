@@ -1,3 +1,6 @@
+# Copyright 2026 Egor Gladkov (Dezodemius), https://github.com/Dezodemius/dnd-lss-character-generator
+# SPDX-License-Identifier: Apache-2.0
+
 """Сборка и проверка листа персонажа Long Story Short (LSS).
 
 Команды:

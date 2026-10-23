@@ -196,9 +196,25 @@ upload [lss-character.skill](https://github.com/Dezodemius/dnd-lss-character-gen
 in Claude.ai. Requires Python 3.8+, ideally with `jsonschema` and `pillow`.
 The skill's instructions are in Russian, but agents follow them in any language.
 
+License: Apache-2.0. Author of the original skill: Egor Gladkov (Dezodemius). If you share a
+copy or build on this skill, keep the `LICENSE` and `NOTICE` files with the author and the link
+to this repository.
+
+## Лицензия и авторство
+
+Скилл распространяется по лицензии [Apache-2.0](LICENSE). Пользуйся, меняй и делись, в том
+числе в своих проектах. Условие одно: при распространении копии или переделки сохраняй файлы
+`LICENSE` и [`NOTICE`](NOTICE) - в NOTICE указан автор оригинального скилла,
+Egor Gladkov (Dezodemius), и ссылка на этот репозиторий. В архиве релиза оба файла уже лежат
+внутри папки `lss-character/`.
+
+Если делаешь свой скилл на основе этого, будет приятно, если оставишь ссылку и в своём README.
+
 ## Источники
 
 Схема листа и справочники заклинаний SRD в `lss-character/reference/` взяты из открытой
 документации для разработчиков Long Story Short:
 https://longstoryshort.app/doc/developers/characters/. Проект не связан с командой LSS.
-Материалы SRD 5.1 / 5.2 распространяются по лицензии CC-BY-4.0 (Wizards of the Coast).
+Эти файлы не подпадают под лицензию проекта, подробности - в [`NOTICE`](NOTICE).
+Материалы SRD 5.1 / 5.2.1 распространяются по лицензии CC-BY-4.0 (Wizards of the Coast).
+Dungeons & Dragons и D&D - товарные знаки Wizards of the Coast LLC.

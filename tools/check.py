@@ -1,3 +1,6 @@
+# Copyright 2026 Egor Gladkov (Dezodemius), https://github.com/Dezodemius/dnd-lss-character-generator
+# SPDX-License-Identifier: Apache-2.0
+
 """Смоук-тесты скилла: черновики собираются, готовые примеры проходят проверку, сломанный черновик отклоняется.
 
 Использование: python tools/check.py
